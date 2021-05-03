@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', async function() {
     if (location.length > 0 && days > 0 & days < 11) {
 
       // - Construct a URL to call the WeatherAPI.com API
-      let url = `https://api.weatherapi.com/v1/forecast.json?key=eb1c92885e7f4119a0842241210305&q=${location}&days=${numDays}`
+      let url = `https://api.weatherapi.com/v1/forecast.json?key=eb1c92885e7f4119a0842241210305&q=${location}&days=${days}`
 
       // - Fetch the url, wait for a response, store the response in memory
       let response = await fetch(url)
@@ -58,15 +58,15 @@ window.addEventListener('DOMContentLoaded', async function() {
 
       // Add JS to the HTML
       locationName.innerHTML = `
-        <div class="text-center space-y-2">
-        <div class="font-bold text-3xl">Current Weather for ${locationNew}</div>
-        <div class="font-bold">
-          <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" class="inline-block">
-          <span class="temperature">${todayTemp}</span>° 
-          and
-          <span class="conditions">${todayCondition}</span>
-        </div>
-      </div>`
+      <div class="text-center space-y-2">
+      <div class="font-bold text-3xl">Current Weather for ${locationNew}</div>
+      <div class="font-bold">
+        <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" class="inline-block">
+        <span class="temperature">${todayTemp}</span>° 
+        and
+        <span class="conditions">${todayCondition}</span>
+      </div>
+    </div>`
 
       // Define variable for forecasts
       let forecastList = document.querySelector(`.forecast`)
